@@ -1,0 +1,157 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/index.css')
+    link(rel='stylesheet', href='../static/viewjob.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    script.
+      var session = !{obj};
+    title JobSquare
+  body
+    .viewjobbg
+      .navbar
+        if session.isAdmin
+          a(href='index')
+            img.logo(src='../static/logo.webp', alt='logo')
+          ul
+            a(href='jobs')
+              li Jobs
+            a(href='postedjobs')
+              li Posted Jobs
+            a(href='applicants')
+              li Applicants
+          if session.loggedIn 
+            li.userli #{session.username}
+            a(href='logout')
+              i.fa-solid.fa-arrow-right-from-bracket
+          unless session.loggedIn
+            button.login-btn.profile
+              a(href='login') Login
+        
+        else
+          a(href='index')
+            img.logo(src='../static/logo.webp', alt='logo')
+          ul
+            a(href='jobs')
+              li Jobs
+            a(href='appliedjobs')
+              li Applied Jobs
+          if session.loggedIn 
+            li.userli.xmg #{session.username}
+            a(href='logout')
+              i.fa-solid.fa-arrow-right-from-bracket
+
+          unless session.loggedIn
+            button.login-btn.xtmg
+              a(href='login') Login
+
+      .main
+        for elem in jobdetails
+          .left
+              img.round-logo(src=`../images/${elem.company_logo}`, alt='logo')
+              .lmg
+                span.hiring
+                  span.company-span
+                    a(href='company-info') !{elem.company_name}
+                  |  is hiring
+                span.title !{elem.job_title}
+                .details
+                  .combo
+                    span.key LEVEL
+                    span.value.color.cap !{elem.job_level}
+                  .combo
+                    span.key TYPE
+                    span.value.color.cap !{elem.job_type}
+                  .combo
+                    span.key CATEGORY
+                    span.value.color.cap !{elem.job_category}
+                  .combo
+                    span.key JOB LOCATION
+                    span.value.color.cap !{elem.job_location}
+                  .combo
+                    span.key DATE POSTED
+                    span.value.nocol.cap !{elem.postdate}
+                  .combo
+                    span.key EXPIRES
+                    span.value.nocol.cap !{elem.expirydate}
+                  .combo
+                    span.key PAY
+                    span.value.nocol.cap $!{elem.pay} !{elem.payment_type}
+                h2.description-title Job Description
+                .description
+                  p
+                    | Bustle Digital Group is seeking a remote part-time Commerce writer to join our growing
+                    | Commerce and Affiliate Marketing team.
+                  p
+                    | The Commerce team operates separately from each site&rsquo;s editorial team, and Commerce articles
+                    | are written to generate revenue from sales of products featured in the articles. The
+                    | Commerce team covers the full range of product categories, including home, health, beauty,
+                    | fashion etc. The success of an article is measured based on the affiliate revenue it earns &mdash;
+                    | this means a strong candidate needs to be a strong writer and effectively communicate what
+                    | makes a product worth purchasing.
+                  p
+                    | The ideal candidate should have three or more years of experience writing for online or
+                    | print, and previous experience with commerce or affiliate content writing is a plus. Most
+                    | importantly, candidates should be knowledgeable and passionate about researching products,
+                    | especially those found on Amazon.
+                  p
+                    | Candidates must be able to work remotely at least three days per week (and 24 hours per
+                    | week), Monday through Friday, during standard business hours. This is a part-time role on
+                    | staff, not a freelance position. Please do not apply UNLESS you have this availability.
+                h2.resp-title Responsibilities
+                .resp
+                  ul
+                    li
+                      | Write assigned product roundups for BDG brands such as Bustle, Elite Daily, Romper,
+                      | Nylon, Mic, and Inverse
+                    li
+                      | Work closely with your editor to ensure that articles are informative, conversational,
+                      | and optimized for affiliate
+                button.left-applynow-btn
+                  a(href=`/applyjob?id=${elem._id}`) Apply Now
+                p.last-text
+                  | Don&rsquo;t forget to mention in your application: 
+                  br
+                  b &ldquo;I found this great opportunity at JobSquare.&rdquo;
+                  br
+                  | It helps us add more writing jobs for you.
+          .right
+            .rmg
+              h1 Apply now
+              p
+                | Don&rsquo;t forget to mention in your application: 
+                br
+                br
+                b &ldquo;I found this great opportunity at JobSquare.&rdquo;
+                |  
+                br
+                br 
+                | It helps us add more writing jobs for you.
+              button.applynow-btn
+                a(href=`/applyjob?id=${elem._id}`) Apply Now
+              .social
+                h1.share Share With Other Writers
+                .media
+                  i.fa-xl.fa-brands.fa-linkedin
+                  i.fa-xl.fa-brands.fa-facebook
+                  i.fa-xl.fa-brands.fa-twitter
+                  i.fa-xl.fa-solid.fa-envelope
+              .report
+                span.report-title Report
+                p.report-para
+                  | Something wrong with this job posting? 
+                  br
+                  |  Report this job and help us maintain 
+                  br
+                  |  the quality of jobs. Thank you.
+                span.report-logo
+                  i.fa-solid.fa-flag
+                  | Report
+      .alljobs
+        button.alljobs-btn
+          a(href='jobs')
+            i.fa-solid.fa-arrow-left
+            | &nbsp;All Jobs

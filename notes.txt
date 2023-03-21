@@ -1,0 +1,16 @@
+// Minor fixes
+// Change look
+
+// include applicant emails in schema using arrays
+
+// responsibilities
+// more jobs (+10) --->>
+// search, filter
+// res.redirect --->>
+// delete job
+
+
+// applicants
+// profile page
+    -> Admin: Posted jobs -> Applicants
+    -> Applicant: Applied jobs

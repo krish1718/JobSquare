@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/index.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    script.
+      var session = !{obj};
+    title JobSquare
+  body
+    .navbar
+      if session.isAdmin
+        a(href='index')
+          img.logo(src='../static/logo.webp', alt='logo')
+        ul
+          a(href='jobs')
+            li Jobs
+          a(href='postedjobs')
+            li Posted Jobs
+          a(href='applicants')
+            li Applicants
+        if session.loggedIn 
+          li.userli #{session.username}
+          a(href='logout')
+            i.fa-solid.fa-arrow-right-from-bracket
+        unless session.loggedIn
+          button.login-btn.profile
+            a(href='login') Login
+      
+      else
+        a(href='index')
+          img.logo(src='../static/logo.webp', alt='logo')
+        ul
+          a(href='jobs')
+            li Jobs
+          a(href='appliedjobs')
+            li Applied Jobs
+        if session.loggedIn 
+          li.userli.xmg #{session.username}
+          a(href='logout')
+            i.fa-solid.fa-arrow-right-from-bracket
+
+        unless session.loggedIn
+          button.login-btn.xtmg
+            a(href='login') Login
+
+    .first
+      .left
+        .content
+          p.left-p Job Search Doesn&apos;t Happen Alone
+          h1.left-h1 Join the JobSquare
+          button.membership-btn
+            a(href='membership') Start Your Membership
+      .right
+        img.rightpic(src='../static/home.png', alt='')

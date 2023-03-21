@@ -1,0 +1,84 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    link(rel='stylesheet', href='../static/applyjob.css')
+    title JobSquare
+  body
+    for elem in applications
+      .logo
+        img.round-logo(src=`../images/${elem.company_logo}`, alt='logo')
+      .mg
+        .title
+          h2 !{elem.job_title}
+          .categories
+            .catg.location !{elem.job_location} &nbsp; /
+            .catg.department !{elem.job_category} &nbsp; /
+            .catg.commitment !{elem.job_type}
+      .bg
+        .mg
+          .mid
+          .message #{message}
+          form(action=`/applyjob?id=${elem._id}`, method='post')
+            .application-form
+              h4 SUBMIT YOUR APPLICATION
+              ul
+                li
+                  .combo
+                    .field
+                      | Resume/CV
+                      span.asterisk *
+                    .input
+                      input#resume(type='text', name='resume', required)
+                li
+                  .combo
+                    .field
+                      | Full name
+                      span.asterisk *
+                    .input
+                      input#name(type='text', name='name', required)
+                li
+                  .combo
+                    .field
+                      | Email
+                      span.asterisk *
+                    .input
+                      input#email(type='email', name='email', required)
+                li
+                  .combo
+                    .field Phone
+                    .input
+                      input#phone(type='text', name='phone')
+                li
+                  .combo
+                    .field Current company
+                    .input
+                      input#company(type='text', name='company')
+            .application-form
+              h4 LINKS
+              ul
+                li
+                  .combo
+                    .field LinkedIn URL
+                    .input
+                      input#linkedin(type='text', name='linkedin')
+                li
+                  .combo
+                    .field Twitter URL
+                    .input
+                      input#twitter(type='text', name='twitter')
+                li
+                  .combo
+                    .field Portfolio URL
+                    .input
+                      input#portfolio(type='text', name='portfolio')
+                li
+                  .combo
+                    .field Other website
+                    .input
+                      input#other(type='text', name='other')
+            .submit
+              button.submit-btn(type='submit') SUBMIT APPLICATION

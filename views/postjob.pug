@@ -1,0 +1,184 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/postjob.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    script.
+      var session = !{obj};
+    title JobSquare
+  body
+    .navbar
+      a(href='jobs')
+        img(src='../static/jobs.svg', alt='logo')
+    .mg
+      .section
+        h1.title Post a Job for $300
+        .text
+          | Publish your writing job post on the 
+          b #1 content writing job board
+          |  to reach 450K+ monthly website visitors, 185K+ LinkedIn fans, 6K+ Facebook followers, 4.5K Twitter followers and 17,500+ newsletter readers!
+        form(action='/postjob', method='post', enctype='multipart/form-data')
+          #first.form
+            .slider
+              .info Company information
+              .counter 1 / 3
+            .form-title
+              .main-title Tell us about your company
+              p.para We won&apos;t sell or rent your personal information to any third parties
+            .form-content
+              .combo
+                .field
+                  | Please enter your email
+                  span.asterisk  *
+                .input
+                  input(type='text', name='company_email', value=`${session.email}`, readonly)
+              .combo
+                .field
+                  | Company name
+                  span.asterisk  *
+                .input
+                  input(type='text', name='company_name', placeholder='e.g. Airbnb', required='')
+              .combo
+                .field
+                  | Company location
+                  span.asterisk  *
+                .input
+                  input(type='text', name='company_location', placeholder='e.g. Toronto, Canada', required='')
+              .combo
+                .field
+                  | Company website
+                  span.asterisk  *
+                .input
+                  input(type='text', name='company_website', placeholder='e.g. https://example.com', required='')
+              .long
+                .field
+                  | Company logo
+                  span.asterisk  *
+                .col
+                  .upload
+                    input(type='file', accept='image/*' , id='company_logo', name='company_logo', class="disappear", required='')
+                    label(for='company_logo' class="upload-text")
+                      i.fa-solid.fa-cloud-arrow-up 
+                      | &nbsp;Upload file
+                  p.size 200x200 or larger square image recommended.
+            hr
+            .btn
+              i
+              button#one.next(type='button') Next Step
+          #second.form.disappear
+            .slider
+              .info Job information
+              .counter 2 / 3
+            .form-title
+              .main-title Give us more information about the job
+              p.para Please fill in the details below so that we can get in contact with you
+            .form-content
+              .combo
+                .field
+                  | Job title
+                  span.asterisk  *
+                .input
+                  input(type='text', name='job_title', placeholder='e.g. Content manager')
+              .combo
+                .field Link to job
+                .input
+                  input(type='text', name='job_link', placeholder='e.g. mycompany.hr/content-manager')
+              .combo
+                .field
+                  | Job type
+                  span.asterisk  *
+                .input
+                  select#jobtype(name='job_type')
+                    option(value='placeholder', selected='', disabled='') Select one...
+                    option(value='Contract') Contract
+                    option(value='Freelance') Freelance
+                    option(value='Full-time') Full-time
+                    option(value='Part-time') Part-time
+                    option(value='Internship') Internship
+              .combo
+                .field
+                  | Job category
+                  span.asterisk  *
+                .input
+                  select#jobcategory(name='job_category')
+                    option(value='placeholder', selected='', disabled='') Select one...
+                    option(value='Business') Business
+                    option(value='Content-Writing') Content Writing
+                    option(value='Editing') Editing
+                    option(value='Finance') Finance
+                    option(value='Marketing') Marketing
+                    option(value='Technical') Technical
+              .combo
+                .field
+                  | Job level
+                  span.asterisk  *
+                .input
+                  select#jobtype(name='job_level')
+                    option(value='placeholder', selected='', disabled='') Select one...
+                    option(value='Any') Any
+                    option(value='Entry-Level') Entry-Level
+                    option(value='Mid-Level') Mid-Level
+                    option(value='Senior') Senior
+              .combo
+                .field
+                  | Job location
+                  span.asterisk  *
+                .input
+                  select#jobtype(name='job_location')
+                    option(value='placeholder', selected='', disabled='') Select one...
+                    option(value='Remote') Remote
+                    option(value='Remote (US/Canada)') Remote (US/Canada)
+                    option(value='Remote (US)') Remote (US)
+                    option(value='Remote (Canada)') Remote (Canada)
+                    option(value='Remote (Europe)') Remote (Europe)
+                    option(value='Remote (Australia)') Remote (Australia)
+                    option(value='Local') Local
+                    option(value='Remote (UK)') Remote (UK)
+                    option(value='Remote (India)') Remote (India)
+            hr
+            .btn
+              i#backtwo.fa-solid.fa-arrow-left
+              button#two.next(type='button') Next Step
+          #third.form.disappear
+            .slider
+              .info Last Details
+              .counter 3 / 3
+            .form-title
+              .main-title One step away from finding your perfect match
+              p.para Please fill in the details below so we can get in contact with you.
+            .form-content
+              .combo.big
+                .field
+                  | Job description
+                  span.asterisk  *
+                .input
+                  textarea#job-description(name='job_description', cols='90', rows='10', placeholder='Example text')
+              .combo
+                .field
+                  | Payment type
+                  span.asterisk  *
+                .input
+                  select#paymenttype(name='payment_type')
+                    option(value='placeholder', selected='', disabled='') Select one...
+                    option(value='per-character') Per character
+                    option(value='per-word') Per word
+                    option(value='per-article') Per article
+                    option(value='per-project') Per project
+                    option(value='hourly') Hourly
+                    option(value='weekly') Weekly
+                    option(value='monthly') Monthly
+                    option(value='anually') Anually
+              .combo
+                .field
+                  | Pay (in US dollar)
+                  span.asterisk  *
+                .input
+                  input(type='number', name='pay')
+            hr
+            .btn
+              i#backthree.fa-solid.fa-arrow-left
+              button#submit.next.submit(type='submit') Submit
+    script(src='../static/postajob.js')

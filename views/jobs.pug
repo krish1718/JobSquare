@@ -1,0 +1,109 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/index.css')
+    link(rel='stylesheet', href='../static/jobs.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    script.
+      var session = !{obj};
+      var role = !{rol};
+    title JobSquare
+  body
+    .jobsbg
+      .navbar
+        if session.isAdmin
+          a(href='index')
+            img.logo(src='../static/logo.webp', alt='logo')
+          ul
+            a(href='jobs')
+              li Jobs
+            a(href='postedjobs')
+              li Posted Jobs
+            a(href='applicants')
+              li Applicants
+          if session.loggedIn 
+            li.userli #{session.username}
+            a(href='logout')
+              i.fa-solid.fa-arrow-right-from-bracket
+          unless session.loggedIn
+            button.login-btn.profile
+              a(href='login') Login
+        
+        else
+          a(href='index')
+            img.logo(src='../static/logo.webp', alt='logo')
+          ul
+            a(href='jobs')
+              li Jobs
+            a(href='appliedjobs')
+              li Applied Jobs
+          if session.loggedIn 
+            li.userli.xmg #{session.username}
+            a(href='logout')
+              i.fa-solid.fa-arrow-right-from-bracket
+
+          unless session.loggedIn
+            button.login-btn.xtmg
+              a(href='login') Login
+        
+      .top
+        h1.latest #{message}
+        if session.isAdmin 
+          button.postjob-btn
+            a(href='postjob')
+              i.fa-solid.fa-briefcase
+              span  &nbsp; Post a Job
+      .search
+        form(action='/search', method='post')
+          input.search-input(type='text', name='searchText' placeholder='Search...')
+          button.subbtn(type='submit')
+            i.fa-solid.fa-magnifying-glass
+      hr.firsthr
+      .cards
+        a.zindex(href='viewjob')
+        for elem in details
+          .card
+            a.zindex(href=`viewjob?id=${elem._id}`)
+              .complogo
+                img( class='company_logo' src=`../images/${elem.company_logo}`, alt='logo')
+            .space-between
+              a.zindex(href=`viewjob?id=${elem._id}`)
+                .details
+                  h3.title !{elem.job_title}
+                  .spans
+                    span.company !{elem.company_name}
+                    span.tags !{elem.job_level}, !{elem.job_type}, !{elem.job_category}
+                    span.location
+                      i.fa-solid.fa-sm.fa-earth-americas
+                      | !{elem.job_location}
+              .card-buttons
+                a.zindex(href='viewjob')
+                if session.isAdmin
+                  if role === 'posted'
+                    button.apply-btn
+                      a.zindex(href='viewjob')
+                      a(href=`applicants?id=${elem._id}`)
+                        | Applicants
+                        i.fa-solid.fa-up-right-from-square
+                else 
+                  if role === 'applied'
+                    //- button.apply-btn
+                    //-   a.zindex(href='viewjob')
+                    //-   a(href=`applyjob?id=${elem._id}`)
+                    //-     | Applied
+                    //-     i.fa-solid.fa-up-right-from-square
+                  else 
+                    button.apply-btn
+                      a.zindex(href='viewjob')
+                      a(href=`applyjob?id=${elem._id}`)
+                        | Apply
+                        i.fa-solid.fa-up-right-from-square
+                
+                button.viewjob-btn
+                  a(href=`viewjob?id=${elem._id}`) View Job
+              .date
+                span !{elem.date}
+          hr

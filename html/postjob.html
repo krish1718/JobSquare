@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/postjob.css">
+    <script src="https://kit.fontawesome.com/3df0ef7b82.js" crossorigin="anonymous"></script>
+    <title>Jobs Portal</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="jobs.svg" alt="logo">
+    </div>
+    <div class="mg">
+        <div class="section">
+            <h1 class="title">Post a Job for $300</h1>
+            <div class="text">
+                Publish your writing job post on the <b>#1 content writing job board</b> to reach 450K+ monthly website
+                visitors, 185K+ LinkedIn fans, 6K+ Facebook followers, 4.5K Twitter followers and 17,500+ newsletter
+                readers!
+            </div>
+            <form action="/postajob" method="post">
+                <div class="form" id="first">
+                    <div class="slider">
+                        <div class="info">Company information</div>
+                        <div class="counter">1 / 3</div>
+                    </div>
+                    <div class="form-title">
+                        <div class="main-title">Tell us about your company</div>
+                        <p class="para">We won't sell or rent your personal information to any third parties</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="combo">
+                            <div class="field">Please enter your email<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <input type="text" placeholder="e.g. mycompany@gmail.com">
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Company name<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <input type="text" placeholder="e.g. Airbnb">
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Company location<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <input type="text" placeholder="e.g. Toronto, Canada">
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Company website<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <input type="text" placeholder="e.g. https://example.com">
+                            </div>
+                        </div>
+                        <div class="long">
+                            <div class="field">Company logo<span class="asterisk"> *</span></div>
+                            <div class="col">
+                                <div class="upload"><i class="fa-solid fa-cloud-arrow-up"></i> &nbsp;Upload file</div>
+                                <p class="size">200x200 or larger square image recommended.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="btn">
+                        <i></i>
+                        <button type="" class="next" id="one">Next Step</button>
+                    </div>
+                </div>
+
+                <div class="form disappear" id="second">
+                    <div class="slider">
+                        <div class="info">Job information</div>
+                        <div class="counter">2 / 3</div>
+                    </div>
+                    <div class="form-title">
+                        <div class="main-title">Give us more information about the job</div>
+                        <p class="para">Please fill in the details below so that we can get in contact with you</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="combo">
+                            <div class="field">Job title<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <input type="text" placeholder="e.g. Content manager">
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Link to job</div>
+                            <div class="input">
+                                <input type="text" placeholder="e.g. mycompany.hr/content-manager">
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Job type<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <select name="jobtype" id="jobtype">
+                                    <option value="placeholder" selected disabled>Select one...</option>
+                                    <option value="contract">Contract</option>
+                                    <option value="freelance">Freelance</option>
+                                    <option value="full-time">Full-time</option>
+                                    <option value="part-time">Part-time</option>
+                                    <option value="Internship">Internship</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Job category<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <select class="mgselect" name="jobcategory" id="jobcategory">
+                                    <option value="placeholder" selected disabled>Select one...</option>
+                                    <option value="business">Business</option>
+                                    <option value="content-writing">Content Writing</option>
+                                    <option value="editing">Editing</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="marketing">Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Job level<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <select name="jobtype" id="jobtype">
+                                    <option value="placeholder" selected disabled>Select one...</option>
+                                    <option value="any">Any</option>
+                                    <option value="entry-level">Entry-Level</option>
+                                    <option value="mid-level">Mid-Level</option>
+                                    <option value="senior">Senior</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Job location<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <select name="jobtype" id="jobtype">
+                                    <option value="placeholder" selected disabled>Select one...</option>
+                                    <option value="remoteus">Remote</option>
+                                    <option value="remoteus">Remote (US/Canada)</option>
+                                    <option value="remoteus">Remote (US)</option>
+                                    <option value="remoteus">Remote (Canada)</option>
+                                    <option value="remoteus">Remote (Europe)</option>
+                                    <option value="remoteus">Remote (Australia)</option>
+                                    <option value="local">Local</option>
+                                    <option value="remoteuk">Remote (UK)</option>
+                                    <option value="remoteIndia">Remote (India)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="btn">
+                        <i class="fa-solid fa-arrow-left" id="backtwo"></i>
+                        <button class="next" id="two">Next Step</button>
+                    </div>
+                </div>
+
+                <div class="form disappear" id="third">
+                    <div class="slider">
+                        <div class="info">Last Details</div>
+                        <div class="counter">3 / 3</div>
+                    </div>
+                    <div class="form-title">
+                        <div class="main-title">One step away from finding your perfect match</div>
+                        <p class="para">Please fill in the details below so we can get in contact with you.</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="combo big">
+                            <div class="field">Job description<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <textarea name="job-description" id="job-description" cols="90" rows="10"
+                                    placeholder="Example text"></textarea>
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Payment type<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <select name="paymenttype" id="paymenttype">
+                                    <option value="placeholder" selected disabled>Select one...</option>
+                                    <option value="per-character">Per character</option>
+                                    <option value="per-word">Per word</option>
+                                    <option value="per-article">Per article</option>
+                                    <option value="per-project">Per project</option>
+                                    <option value="hourly">Hourly</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="anually">Anually</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="combo">
+                            <div class="field">Pay (in US dollar)<span class="asterisk"> *</span></div>
+                            <div class="input">
+                                <input type="number">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="btn">
+                        <i class="fa-solid fa-arrow-left" id="backthree"></i>
+                        <button type="submit" class="next submit" id="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../static/postajob.js"></script>
+</body>
+
+</html>

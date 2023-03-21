@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.jobsbg{
+    background-color: #fafafa;
+    height: 100vh;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-top: 95px;
+}
+
+.latest{
+    font-size: 34px;
+    font-family: 'DM Serif Display', serif;
+    color: #3F3F46;
+}
+
+.postjob-btn{
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    background-color: #005450;
+    padding: 11px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    /* padding: 5px; */
+}
+
+.postjob-btn:hover{
+    background-color: #00413e;
+    cursor: pointer;
+}
+
+.search{
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-top: 25px;
+    outline: none;
+}
+
+.search-input{
+    width: 100%;
+    height: 44px;
+    text-indent: 10px;
+    font-size: 17px;
+    border: 2px solid #dedee1;
+    border-radius: 4px;
+}
+
+.search-input:focus { 
+    outline: none !important;
+    border: none !important;
+    box-shadow: 1px 1px 2px 4px #d3efee;
+}
+
+.search i {
+    margin-left: -40px;
+}
+
+.subbtn{
+    border: none;
+    margin: -2px;
+}
+
+hr{
+    /* border: 1px solid #f1f1f2; */
+    border: 1px solid #10106115 !important;
+}
+
+.firsthr{
+    margin-top: 30px;
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+.cards{
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+.card{
+    height: 61;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.zindex{
+    display: block;
+}
+
+.card:hover{
+    background-color: #f4f4f5;
+}
+
+.card:hover + .card-buttons{
+    display: block;
+}
+
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    display: none;
+}
+
+.card:hover .card-buttons{
+    display : flex;
+}
+.card:hover .date{
+    display : none;
+}
+
+.apply-btn{
+    /* border: 1px solid #e6e6e8; */
+    border: 1px solid #d8d8dcc9;
+    border-radius: 5px;
+    color: #4b4b52;
+    background-color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.apply-btn:hover{
+    background-color: #f8f8fb;
+    /* border: 1px solid #005450; */
+}
+
+.viewjob-btn{
+    color: white;
+    background-color: #005450;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* .viewjob-btn a, .viewjob-btn a:hover{
+    text-decoration: none;
+    color: white;
+} */
+
+.viewjob-btn:hover{
+    background-color: #00413e;
+}
+
+.complogo{
+    width: 61px;
+    height: 61px;
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 1px #ebebeb;
+}
+
+.card img{
+    /* transform: scale(0.6, 0.6);
+    mix-blend-mode: darken; */
+    background-size: contain;
+    overflow: hidden;
+}
+
+.title{
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #00413e;
+}
+
+.spans{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.spans span{
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: #56565c;
+    margin-right: 15px;
+}
+
+.details{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.company{
+    font-weight: 600;
+}
+
+.fa-earth-americas{
+    margin-right: 4px;
+}
+
+.date{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.space-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fa-up-right-from-square{
+    margin-left: 10px;
+}

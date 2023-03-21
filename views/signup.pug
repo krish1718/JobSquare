@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/signup.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    title JobSquare
+  body
+    .main
+      img(src='../static/bw-logo-mark-primary.svg', alt='logo')
+      h1.create-acc Create a new account
+      h1.welcome-text Welcome! Get started with a free account.
+      .message #{message}
+      .signup-form
+        form(action='signup', method='post')
+          label.field(for='name') Full Name
+          input(type='text', placeholder='Enter your name', name='name', required='')
+          label.field(for='email') Email
+          input(type='text', placeholder='Enter your email', name='email', required='')
+          label.field(for='password') Password
+          input(type='password', placeholder='Enter your password', name='password', required='')
+          .cbox
+            input#admin(type='checkbox', name='admin', value='admin')
+            label.cb(for='admin') Want to post jobs?
+          button.signup-btn(type='submit') Sign Up
+        .already-acc
+          span Already have an account?&nbsp;
+          span.login-link
+            a(href='login') Log In
+        .back
+          a(href='index')
+            i.fa-solid.fa-arrow-left
+            span.homepage Back to Home Page

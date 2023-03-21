@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+.message{
+    color: red;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 15px;
+}
+
+.bold{
+    font-weight: 700;
+    color: #107671;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.main img{
+    width: 64px;
+    height: 64px;
+}
+
+.create-acc{
+    font-size: 30px;
+    font-family: 'DM Serif Display', serif;
+    color: #3F3F46;
+    margin-top: 24px;
+    font-weight: 400;
+}
+
+.welcome-text{
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    color: #5c5c65;
+    font-weight: 300;
+    margin-top: 12px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    width: 384px;
+}
+
+form input{
+    padding: 15px 10px;
+    border: 2px solid #e7e7ef;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+form input:focus, form input:active{
+    border: none !important;
+    box-shadow: 1px 1px 2px 4px #d3efee;
+}
+
+::placeholder{
+    font-family: 'DM Sans', sans-serif;
+    color: #020216;
+    font-size: 16px;
+    font-weight: 500px;
+}
+
+.field{
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: #515157;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.signup-btn{
+    width: 384px;
+    margin-top: 30px;
+    padding: 12px 20px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #005450;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.already-acc{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 32px;
+    justify-content: center;
+}
+
+.login-link{
+    color: #107671;
+    font-weight: 600;
+}
+
+.back{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    color: #7d7d86;
+}
+
+.cbox{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+
+.cb{
+    margin: 0px 10px;
+}
+
+.homepage{
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.back i{
+    width: 20px;
+    height: 20px;
+}
+
+
+

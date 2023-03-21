@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/login.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    script.
+      var message = !{obj};
+    title JobSquare
+  body
+    .main
+      img(src='../static/bw-logo-mark-primary.svg', alt='logo')
+      h1.login-acc Log in to your account
+      h1.welcome-text #{message}
+      .login-form
+        form(action='login', method='post')
+          label.field(for='email') Email
+          input(type='text', placeholder='Enter your email', name='email', required='')
+          label.field(for='password') Password
+          input(type='password', placeholder='Enter your password', name='password', required='')
+          span.forgot Forgot password?
+          button.login-btn(type='submit') Log In
+        .no-acc
+          span Don&apos;t have an account?&nbsp;
+          span.signup-link
+            a(href='signup') Sign Up
+        .back
+          a(href='index')
+            i.fa-solid.fa-arrow-left
+            span.homepage Back to Home Page

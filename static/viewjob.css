@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+a, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    background-color: #005450;
+}
+
+.main{
+    background-color: white;
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    height: 1350px;
+    border: none;
+    border-radius: 5px;
+}
+
+.left{
+    background-color: white;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+}
+
+.lmg{
+    margin: 0px 64px;
+    margin-top: 32px;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.round-logo{
+    /* transform: scale(0.5, 0.5); */
+    /* border-radius: 50%; */
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: 65px;
+    box-shadow: 1px 2px 1px 1px #e3e3e3;
+}
+
+/* .complogo{
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: 65px;
+    box-shadow: 1px 2px 1px 1px #e3e3e3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.round-logo{
+    transform: scale(0.6, 0.6);
+} */
+
+.round-logo img{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-clip: padding-box;
+}
+
+.company-span{
+    color: #09726d;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hiring{
+    font-size: 18px;
+    color: #27272A;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.title{
+    margin-top: 10px;
+    font-size: 48px;
+    color: #27272A;
+    font-family: 'DM Serif Display', serif;
+}
+
+.details{
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.combo{
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0px 24px 24px 0px;
+}
+
+.key{
+    font-size: 12px;
+    color: #a5a5ae;
+}
+
+.value{
+    font-size: 14px;
+    margin-top: 4px;
+    color: #62626a;
+    font-weight: 600;
+    text-align: center;
+}
+
+.color{
+    background-color: #e4f5f5;
+    color: #167a75;
+    padding: 4px 10px;
+}
+
+.nocol{
+    margin-top: 8px;
+}
+
+.cap{
+    text-transform: uppercase;
+}
+
+.description-title, .resp-title{
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: #3f3f46;
+    font-weight: 500;
+}
+
+.description-title{
+    margin: 54px 0px 36px;
+}
+
+.resp-title{
+    margin: 45px 0px 18px;
+}
+
+.description p{
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 25px;
+    color: #525259;
+    font-size: 18px;
+}
+
+.resp ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 20px;
+    padding: 0px 0px 0px 26px;
+}
+
+li::marker {
+    color: #d1d5db;
+}
+
+.resp li{
+    font-family: 'DM Sans', sans-serif;
+    color: #4b4b52;
+    margin: 8px 0px;
+    padding: 0px 0px 0px 6px;
+}
+
+.left-applynow-btn{
+    margin-top: 50px;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    background-color: #005450;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 125px;
+    cursor: pointer;
+}
+
+.last-text{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #82828a;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.right{
+    background-color: #fafafa;
+    border: none;
+    border-radius: 5px;
+}
+
+.rmg{
+    padding: 35px 30px;
+    position: sticky;
+    top: 0;
+}
+
+.right h1{
+    font-size: 18px;
+    color: #3F3F46;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+}
+
+.right p{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #505057;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.applynow-btn{
+    margin-top: 35px;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    background-color: #005450;
+    padding: 10px 88px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share{
+    font-size: 18px;
+    color: #45454c;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 50px;
+}
+
+.social{
+    padding: 32px 0px;
+}
+
+.media{
+    margin-top: 25px;
+}
+
+.media i{
+    margin-right: 16px;
+    font-size: 22px;
+    color: #09726d;
+    padding: 8px;
+}
+
+.report{
+    padding: 32px 0px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.report-title{
+    color: #525258;
+    font-weight: 600;
+}
+
+.report-para{
+    margin: 16px 0px;
+}
+
+.report-logo{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    color: #bf3333;
+}
+
+.fa-flag{
+    color: #b91c1c;
+    margin-right: 8px;
+}
+
+.alljobs{
+    margin-left: 125px;
+    margin-top: 96px;
+    width: 190px;
+    margin-bottom: 32px;
+}
+
+.alljobs-btn{
+    font-family: 'DM Sans', sans-serif;
+    background-color: white;
+    color: #105f5b;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}

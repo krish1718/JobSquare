@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='../static/index.css')
+    link(rel='stylesheet', href='../static/jobs.css')
+    script(src='https://kit.fontawesome.com/3df0ef7b82.js', crossorigin='anonymous')
+    script.
+      var session = !{obj};
+    title JobSquare
+  body
+    .jobsbg
+      .navbar
+        if session.isAdmin
+          a(href='index')
+            img.logo(src='../static/logo.webp', alt='logo')
+          ul
+            a(href='jobs')
+              li Jobs
+            a(href='postedjobs')
+              li Posted Jobs
+            a(href='applicants')
+              li Applicants
+          if session.loggedIn 
+            li.userli #{session.username}
+            a(href='logout')
+              i.fa-solid.fa-arrow-right-from-bracket
+          unless session.loggedIn
+            button.login-btn.profile
+              a(href='login') Login
+        
+        else
+          a(href='index')
+            img.logo(src='../static/logo.webp', alt='logo')
+          ul
+            a(href='jobs')
+              li Jobs
+            a(href='appliedjobs')
+              li Applied Jobs
+          if session.loggedIn 
+            li.userli.xmg #{session.username}
+            a(href='logout')
+              i.fa-solid.fa-arrow-right-from-bracket
+
+          unless session.loggedIn
+            button.login-btn.xtmg
+              a(href='login') Login
+        
+      .top
+        h1.latest Applications
+        button.postjob-btn
+          a(href='postjob')
+            i.fa-solid.fa-briefcase
+            span  &nbsp; Post a Job
+      .search
+        input.search-input(type='text', placeholder='Search...')
+        i.fa-solid.fa-magnifying-glass
+      hr.firsthr
+      .applications 
+        for elem in applicants 
+          .application
+            a.zindex(href=`viewjob?id=${elem._id}`)
+              .complogo
+                img( class='company_logo' src=`../images/${elem.company_logo}`, alt='logo')
